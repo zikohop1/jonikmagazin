@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>JONIK MAGAZIN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>JONIK MAGAZIN</h1>
+  <a href="admin.html">Admin panel</a> | <a href="search.html">Qidiruv</a>
+
+  <div id="products"></div>
+
+  <script>
+    const products = [
+      { name: "iPhone 15", category: "telefon", price: 3000000, image: "https://via.placeholder.com/150 " },
+      { name: "AirPods", category: "quloqchin", price: 400000, image: "https://via.placeholder.com/150 " },
+      { name: "Silikon g'ilof", category: "gilof", price: 25000, image: "https://via.placeholder.com/150 " },
+      { name: "Zaryadka", category: "aksesuar", price: 60000, image: "https://via.placeholder.com/150 " }
+    ];
+
+    let html = '';
+    products.forEach(p => {
+      html += `<div class="product">
+                <img src="${p.image}" width="100"><br>
+                ${p.name} - ${p.price.toLocaleString()} so'm<br>
+                <button>Sotib olish</button>
+              </div>`;
+    });
+    document.getElementById('products').innerHTML = html;
+  </script>
+</body>
+</html>
