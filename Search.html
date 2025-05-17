@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Qidiruv</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Mahsulot qidirish</h2>
+  <input type="text" id="searchInput" placeholder="Mahsulot nomi yoki kategoriya...">
+
+  <div id="results"></div>
+
+  <script>
+    const products = [
+      { name: "iPhone 15", category: "telefon", price: 3000000 },
+      { name: "AirPods", category: "quloqchin", price: 400000 },
+      { name: "Silikon g'ilof", category: "gilof", price: 25000 },
+      { name: "Zaryadka", category: "aksesuar", price: 60000 }
+    ];
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+      let query = this.value.toLowerCase();
+      let filtered = products.filter(p => 
+        p.name.toLowerCase().includes(query) || p.category.includes(query)
+      );
+      
+      let html = '';
+      filtered.forEach(p => {
+        html += `<div>${p.name} (${p.category}) - ${p.price.toLocaleString()} so'm</div>`;
+      });
+      document.getElementById('results').innerHTML = html;
+    });
+  </script>
+</body>
+</html>
