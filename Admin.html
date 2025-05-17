@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Admin Panel</h2>
+  <form onsubmit="alert('Ushbu versiyada yangi mahsulot qo'shish ishlamaydi.'); return false;">
+    Mahsulot nomi: <input type="text" name="name"><br>
+    Kategoriya: 
+    <select name="category">
+      <option value="telefon">Telefon</option>
+      <option value="quloqchin">Quloqchin</option>
+      <option value="gilof">G'ilof</option>
+      <option value="aksesuar">Aksesuar</option>
+    </select><br>
+    Narx: <input type="number" name="price"><br>
+    Rasm URL: <input type="text" name="image"><br>
+    <input type="submit" value="Mahsulot qo'shish">
+  </form>
+</body>
+</html>
